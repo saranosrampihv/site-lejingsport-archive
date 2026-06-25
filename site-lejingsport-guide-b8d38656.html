@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐竞体育 · 产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fafbfc;
+            color: #1e1f23;
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            padding: 1.8rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 720px;
+            width: 100%;
+        }
+
+        /* ---------- 标题层级 ---------- */
+        .hero {
+            margin-top: 1.6rem;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+            color: #0b0c10;
+        }
+
+        .hero .subhead {
+            font-size: 1rem;
+            color: #5b5e66;
+            border-left: 3px solid #d0d4db;
+            padding-left: 1rem;
+            margin-top: 0.3rem;
+        }
+
+        section {
+            margin-bottom: 2.7rem;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.9rem;
+            border-bottom: 1px solid #e8eaee;
+            padding-bottom: 0.3rem;
+            color: #121317;
+        }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-top: 1.2rem;
+            margin-bottom: 0.4rem;
+            color: #1f2229;
+        }
+
+        p {
+            margin-bottom: 0.95rem;
+            color: #2d2f36;
+        }
+
+        a {
+            color: #1a4d8f;
+            text-decoration: none;
+            border-bottom: 1px solid #cbd5e1;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        a:hover {
+            color: #0a2f5e;
+            border-bottom-color: #1a4d8f;
+        }
+
+        /* ---------- 卡片/亮点网格 ---------- */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.4rem 0;
+        }
+
+        .highlight-card {
+            background: #ffffff;
+            border: 1px solid #e4e7ed;
+            border-radius: 12px;
+            padding: 1.2rem 1rem;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+            transition: box-shadow 0.2s;
+        }
+
+        .highlight-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+
+        .highlight-card .num {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #7f8592;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+
+        .highlight-card strong {
+            display: block;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: #13151b;
+        }
+
+        .highlight-card p {
+            font-size: 0.9rem;
+            color: #40434b;
+            margin-bottom: 0;
+        }
+
+        /* ---------- 使用建议/场景 ---------- */
+        .scenario-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .scenario-item .badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 500;
+            background: #eef0f4;
+            color: #2a2d36;
+            padding: 0.1rem 0.65rem;
+            border-radius: 20px;
+            margin-right: 0.4rem;
+            letter-spacing: 0.02em;
+        }
+
+        .scenario-item p {
+            margin-top: 0.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        /* ---------- 提示框 ---------- */
+        .notice-box {
+            background: #f2f5fa;
+            border-left: 4px solid #b5c2d4;
+            padding: 1.1rem 1.3rem;
+            border-radius: 0 10px 10px 0;
+            margin: 1.6rem 0;
+        }
+
+        .notice-box p {
+            margin-bottom: 0.3rem;
+            font-size: 0.92rem;
+            color: #1f2937;
+        }
+
+        .notice-box .label {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #3f4a5c;
+            letter-spacing: 0.03em;
+        }
+
+        /* ---------- FAQ 摘要 ---------- */
+        .faq-item {
+            margin-bottom: 0.9rem;
+        }
+
+        .faq-item .q {
+            font-weight: 500;
+            color: #1a1d26;
+            margin-bottom: 0.15rem;
+        }
+
+        .faq-item .a {
+            color: #4a4e59;
+            font-size: 0.92rem;
+            margin-left: 0.2rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e2e5ec;
+            margin: 2rem 0 1.6rem;
+        }
+
+        .footer-note {
+            font-size: 0.8rem;
+            color: #868b97;
+            border-top: 1px solid #e8eaee;
+            padding-top: 1.5rem;
+            margin-top: 0.8rem;
+            text-align: center;
+        }
+
+        .footer-note a {
+            color: #4d5b70;
+            border-bottom: 0;
+        }
+
+        .footer-note a:hover {
+            color: #1a2c44;
+        }
+
+        /* ---------- 响应式 ---------- */
+        @media (max-width: 580px) {
+            body {
+                padding: 1rem 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .highlights-grid {
+                grid-template-columns: 1fr;
+                gap: 0.85rem;
+            }
+
+            .highlight-card {
+                padding: 1rem 0.9rem;
+            }
+
+            section {
+                margin-bottom: 2rem;
+            }
+
+            .notice-box {
+                padding: 0.9rem 1rem;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .container {
+                max-width: 760px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- HERO -->
+    <div class="hero">
+        <h1>乐竞体育 · 产品摘要</h1>
+        <div class="subhead">从关键词到结构 · 信息密度优先</div>
+    </div>
+
+    <!-- 简介段落 -->
+    <section>
+        <p>
+            <strong>乐竞体育</strong>（<a href="https://site-lejingsport.com">乐竞体育</a>）面向运动观察与数据交互场景，提供一套轻量化、可配置的信息聚合方案。平台以体育赛事为轴心，整合赛程、统计与实时动态，并针对不同用户的使用习惯做了分层处理。以下从核心特点、典型场景与使用提示三个维度展开说明。
+        </p>
+    </section>
+
+    <!-- 亮点：卡片网格 -->
+    <section>
+        <h2>亮点 · 功能边界</h2>
+        <div class="highlights-grid">
+            <div class="highlight-card">
+                <div class="num">01</div>
+                <strong>赛事覆盖</strong>
+                <p>主流联赛与杯赛的赛程、积分、阵容数据，更新频次稳定，字段结构清晰。</p>
+            </div>
+            <div class="highlight-card">
+                <div class="num">02</div>
+                <strong>实时动态</strong>
+                <p>关键事件推送与比分变化，延迟控制在可接受范围内，减少非必要刷新。</p>
+            </div>
+            <div class="highlight-card">
+                <div class="num">03</div>
+                <strong>自定义视图</strong>
+                <p>用户可筛选关注联赛、收藏特定队伍，并按日期或轮次整理信息流。</p>
+            </div>
+            <div class="highlight-card">
+                <div class="num">04</div>
+                <strong>轻量化交互</strong>
+                <p>页面结构与数据请求经过优化，适配中低端设备与弱网环境。</p>
+            </div>
+        </div>
+        <p style="margin-top: 0.8rem; font-size: 0.92rem; color: #4b4f59;">
+            上述特点基于产品当前版本，后续迭代可能调整覆盖范围或交互细节。
+        </p>
+    </section>
+
+    <!-- 使用建议 / 场景 -->
+    <section>
+        <h2>使用建议 · 典型场景</h2>
+
+        <div class="scenario-item">
+            <span class="badge">日常跟进</span>
+            <strong>多联赛信息流</strong>
+            <p>同时关注 2–3 个联赛的赛程与排名，可利用收藏功能构建个人面板。建议每周初查看完整赛历，避免遗漏周中加赛。</p>
+        </div>
+
+        <div class="scenario-item">
+            <span class="badge">深度回溯</span>
+            <strong>历史数据对照</strong>
+            <p>赛季中后期需要对比不同轮次的数据变化，可使用筛选区间与列表导出（如有）。注意数据起始节点与统计口径说明。</p>
+        </div>
+
+        <div class="scenario-item">
+            <span class="badge">轻量协作</span>
+            <strong>分享与讨论</strong>
+            <p>通过链接分享特定比赛页或队伍页，接收方可直接查看当前公开信息，无需登录也可浏览基础内容。</p>
+        </div>
+
+        <p style="font-size: 0.92rem; color: #3c3f48; margin-top: 0.4rem;">
+            以上场景并未穷尽所有使用方式，实际效果取决于网络环境与数据源可用性。
+        </p>
+    </section>
+
+    <!-- 可信克制的访问说明 -->
+    <section>
+        <h2>访问说明 · 客观边界</h2>
+        <div class="notice-box">
+            <p><span class="label">数据来源</span> 平台内容基于公开信息与授权数据接口整合，不自行生产原始赛事数据。</p>
+            <p><span class="label">可用性</span> 高峰时段或维护窗口可能影响访问速度，建议错峰使用。移动端体验与桌面端存在差异。</p>
+            <p><span class="label">隐私</span> 产品不主动追踪个人位置或通讯录，仅收集必要的交互偏好以便本地存储。</p>
+        </div>
+        <p style="font-size: 0.89rem; color: #535761;">
+            更多技术细节与使用条款，请参阅平台内的说明页面。本页面仅为产品摘要，不构成任何形式的承诺或保证。
+        </p>
+    </section>
+
+    <!-- FAQ 摘要 -->
+    <section>
+        <h2>FAQ 摘要</h2>
+
+        <div class="faq-item">
+            <div class="q">Q: 是否需要注册才能查看大部分内容？</div>
+            <div class="a">基础赛程与数据浏览无需注册；部分个性化功能（收藏、提醒）建议创建账号以持久化保存设置。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="q">Q: 数据更新延迟通常是多少？</div>
+            <div class="a">实时比分延迟在 5–30 秒范围内，赛程与统计类数据在官方确认后 2–10 分钟内同步。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="q">Q: 遇到显示异常应如何处理？</div>
+            <div class="a">可尝试清除浏览器缓存或切换网络环境。若问题持续，可通过平台内反馈渠道描述具体页面与操作。</div>
+        </div>
+
+        <p style="font-size: 0.88rem; color: #6f7480; margin-top: 0.6rem;">
+            FAQ 内容基于常见疑问整理，不保证涵盖所有场景。具体情况以实际使用为准。
+        </p>
+    </section>
+
+    <hr>
+
+    <div class="footer-note">
+        <p>
+            关于 <a href="https://site-lejingsport.com">乐竞体育</a> · 产品说明页 · 信息版本 2025
+        </p>
+        <p style="margin-top: 0.3rem;">
+            保持简洁 · 不夸大 · 不诱导
+        </p>
+    </div>
+
+</div>
+</body>
+</html>
